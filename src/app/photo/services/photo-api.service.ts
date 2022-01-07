@@ -4,7 +4,7 @@ import { map, Observable } from 'rxjs';
 import { Photo } from '../models/photo';
 import { environment } from '../../../environments/environment';
 
-export interface FlickrAPIResponse {
+export interface FlickrDto {
   photos: {
     photo: Photo[];
   };
@@ -18,7 +18,7 @@ export class PhotoApiService {
 
   public searchPublicPhotos(searchTerm: string): Observable<Photo[]> {
     return this.http
-      .get<FlickrAPIResponse>(`${environment.urlFlickr}/services/rest/`, {
+      .get<FlickrDto>(`${environment.urlFlickr}/services/rest/`, {
         params: {
           tags: searchTerm,
           method: 'flickr.photos.search',
