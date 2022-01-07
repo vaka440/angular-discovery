@@ -12,7 +12,7 @@ export class AppComponent {
   title = '';
   photosSelected$!: Observable<Photo[]>;
 
-  constructor(photoStore: PhotoStoreService) {
-    this.photosSelected$ = photoStore.getPhotosSelected();
+  constructor(private photoStore: PhotoStoreService) {
+    this.photosSelected$ = this.photoStore.getPhotosSelected();
   }
 }

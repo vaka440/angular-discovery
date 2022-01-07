@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Photo } from '../models/photo';
+import { environment } from '../../../environments/environment';
 
 export interface FlickrAPIResponse {
   photos: {
@@ -17,7 +18,7 @@ export class PhotoApiService {
 
   public searchPublicPhotos(searchTerm: string): Observable<Photo[]> {
     return this.http
-      .get<FlickrAPIResponse>('https://www.flickr.com/services/rest/', {
+      .get<FlickrAPIResponse>(`${environment.urlFlickr}/services/rest/`, {
         params: {
           tags: searchTerm,
           method: 'flickr.photos.search',
