@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+    <li><a routerLink="home">HOME</a></li>
+    <li>
+      <a routerLink="selected-photos"
+        >SELECTED PHOTOS ({{ (photosSelected$ | async)?.length }})</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<hr />
+
+<router-outlet></router-outlet>
