@@ -15,10 +15,10 @@ import { debounceTime, filter, map, Subscription } from 'rxjs';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  @Input() term!: string;
+  @Input() term?: string;
   @Output() termEvent = new EventEmitter<string>();
   searchControl = new FormControl('', [Validators.minLength(3)]);
-  sub!: Subscription;
+  sub?: Subscription;
 
   constructor() {}
 
