@@ -10,7 +10,7 @@ import { PhotoStoreService } from './photo/services/photo-store.service';
 })
 export class AppComponent {
   title = '';
-  photosSelected$!: Observable<Photo[]>;
+  photosSelected$?: Observable<Photo[]>;
 
   constructor(private photoStore: PhotoStoreService) {
     this.photosSelected$ = this.photoStore.getPhotosSelected();
