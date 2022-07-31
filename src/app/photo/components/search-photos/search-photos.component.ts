@@ -21,8 +21,8 @@ import { PhotoStoreService } from '../../services/photo-store.service';
   styleUrls: ['./search-photos.component.scss'],
 })
 export class SearchPhotosComponent implements OnInit, OnDestroy {
-  photos!: Photo[];
-  sub!: Subscription;
+  photos?: Photo[];
+  sub?: Subscription;
   term$ = this.photoStore.getTerm();
   interact = { loading: false, error: false };
 
