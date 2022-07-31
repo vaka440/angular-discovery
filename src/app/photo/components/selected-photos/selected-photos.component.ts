@@ -12,8 +12,8 @@ import { PhotoStoreService } from '../../services/photo-store.service';
   styleUrls: ['./selected-photos.component.scss'],
 })
 export class SelectedPhotosComponent implements OnInit, OnDestroy {
-  photos!: Photo[];
-  sub!: Subscription;
+  photos?: Photo[];
+  sub?: Subscription;
 
   constructor(private photoStore: PhotoStoreService) {
     this.sub = this.photoStore
