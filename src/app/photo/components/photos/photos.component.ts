@@ -18,7 +18,7 @@ import { Photo } from '../../models/photo';
   styleUrls: ['./photos.component.scss'],
 })
 export class PhotosComponent {
-  @Input() photos!: Photo[];
+  @Input() photos?: Photo[];
   @Input() withSelectedOption = true;
 
   constructor() {}
